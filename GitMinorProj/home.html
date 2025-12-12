@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MinorProjHomePage</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+
+        .hero-banner {
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            
+        }
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      white-space: nowrap;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: white;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: white;
+      left: 0;
+      bottom: 0;
+      transition: 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+      .navbar .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+      .navbar .nav-link:hover {
+        color: #fff;
+        text-shadow: 0 0 10px #ffffff, 0 0 12px #d7d739;
+      }
+
+      
+
+      .navbar .nav-link::after {
+        content: none !important;
+      }
+
+
+
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background-color: rgb(5, 25, 80);
+        padding: 1rem 0;
+        color: white;
+      }
+
+
+      .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      .navbar-extra {
+        display: none !important;
+      }
+    }
+
+   
+
+    .content-wrapper {
+      padding-top: 90px;
+    }
+
+    .navbar-toggler i {
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+<main>
+  <div>
+  <nav class="navbar navbar-expand-lg navbar-dark py-3 shadow-sm fixed-top" style="background-color: rgb(9, 31, 133);">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-left" href="#">
+        <img src="img/logo.png" alt="Logo" width="50" height="50" class="me-2" />
+      </a>
+
+      <button
+        class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark d-none"></i>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="achievement.html">Achievements</a></li>
+          <li class="nav-item"><a class="nav-link" href="Document.html">Documents</a></li>
+          <li class="nav-item"><a class="nav-link" href="AwardsPage.html">Awards</a></li>
+          <li class="nav-item"><a class="nav-link" href="GalleryPage.html">Gallery</a></li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>
+</div>
+
+
+<script>
+  const toggler = document.querySelector('.navbar-toggler');
+  const collapseEl = document.getElementById('navbarContent');
+  const barsIcon = toggler.querySelector('.fa-bars');
+  const xIcon = toggler.querySelector('.fa-xmark');
+
+  const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+
+  toggler.addEventListener('click', () => {
+    if (collapseEl.classList.contains('show')) {
+      bsCollapse.hide();
+    } else {
+      bsCollapse.show();
+    }
+  });
+
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    barsIcon.classList.add('d-none');
+    xIcon.classList.remove('d-none');
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    barsIcon.classList.remove('d-none');
+    xIcon.classList.add('d-none');
+  });
+</script>
+
+    <section style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <img src="img/ng1.jpg" alt="NGO Background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.3);">
+        <div style="position: relative; z-index: 1; max-width: 800px; padding: 20px;">
+            <h1 style="font-size: 3rem; margin-bottom: 20px; font-weight: bold; color: white;">Empowering Communities for a Better Future</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 30px; color: white;">Join us in making a difference. Together, we can create lasting change.</p>
+        </div>
+    </section>
+
+
+
+<br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6" style="text-align: center;">
+      <img src="img/im1.png" alt="NGO" style="height: 550px" />
+    </div>
+    <div class="col-lg-6 pt-5">
+      <h2 style="text-align: center; color: rgb(21, 21, 179);">
+        <strong>Welcome to Swami Vivekananda Yuva Sangha</strong>
+      </h2>
+      <br />
+      <h4 class="text-dark text-center">Founded In 1974</h4>
+      <p>
+        About 39 years past, a group of spirited youth of village Apple and Saira of undivided Medinipur took an oath for doing something good for the men in the path shown by the revolutionary monk "Swami Vivekananda" and his master "Sri Sri Ramakrishna" along his Guru Maa"Sarada Devi", keeping in mind the historical words "To serve men is to serve God". On the 31st May 1974 the youth took an unanimous decision for forming a platform of social service called as " Swami Vivekananda Yuva Sangha". It was an another learning of Swami Vivekananda for doing anything, a solid platform is must and anything should be done with a sound unity under proper planning keeping a particular goal in mind.
+      </p>
+    </div>
+  </div>
+</div>
+
+<br><br>
+
+<div class="container-fluid" style="background-color: lightblue; padding: 60px 0">
+  <div class="container">
+    <h2 class="fw-bold text-center" style="color: #3e3e3e; font-weight: 800">CURRENT NEWS</h2>
+
+    <div style="position: relative; width: 100%; height: 100px; overflow: hidden; margin-top: 30px">
+      <div class="news-ticker" style="display: flex; animation: scroll-horizontal 40s linear infinite">
+        <div class="news-item" style="min-width: 100%; text-align: center; font-weight: 600">
+          <h4 class="text-dark">TITLE OF THE NEWS</h4>
+          <p style="color: rgb(5, 80, 70)">CURRENT NEWS1</p>
+        </div>
+        <div class="news-item" style="min-width: 100%; text-align: center; font-weight: 600">
+          <h4 class="text-dark">TITLE OF THE NEWS</h4>
+          <p style="color: rgb(5, 80, 70)">CURRENT NEWS 2</p>
+        </div>
+        <div class="news-item" style="min-width: 100%; text-align: center; font-weight: 600">
+          <h4 class="text-dark">TITLE OF THE NEWS</h4>
+          <p style="color: rgb(5, 80, 70)">Another event coming soon</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scroll-horizontal {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<br><br><br><br><br><br>
+
+<div style="text-align: center; padding-left: 50px; padding-right: 50px;">
+  <div class="row text-dark">
+    <h3 style="font-family: sans-serif;">"Service to humanity is service to God."</h3>
+    <h5 style="color: rgb(2, 76, 66);">~Swami Vivekananda</h5>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row justify-content-center d-none d-md-flex">
+
+    <div class="col-md-2 mb-4 position-relative" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ng03.jpg" alt="Image 1" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ng03.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="col-md-2 mb-4 position-relative mt-5" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ngo2.jpg" alt="Image 2" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ngo2.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="col-md-2 mb-4 position-relative" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ngo1.jpg" alt="Image 3" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ngo1.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="col-md-2 mb-4 position-relative mt-5" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ng5.jpg" alt="Image 4" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ng5.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="col-md-2 mb-4 position-relative" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ng04.jpg" alt="Image 5" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ng04.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="col-md-2 mb-4 position-relative mt-5" onmouseover="showBtn(this)" onmouseout="hideBtn(this)">
+      <img src="img/ng06.jpg" alt="Image 6" style="height: 170px; width: 220px; border-radius: 5px;">
+      <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle d-none" onclick="openZoom('img/ng06.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+  </div>
+
+  <div id="eventsCarousel" class="carousel slide d-md-none" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center gap-3">
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ng03.jpg" alt="Image 1" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle"
+                    onclick="openZoom('img/ng03.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ngo2.jpg" alt="Image 2" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle"
+                    onclick="openZoom('img/ngo2.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center gap-3">
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ngo1.jpg" alt="Image 3" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle"
+                    onclick="openZoom('img/ngo1.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ng5.jpg" alt="Image 4" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle"
+                    onclick="openZoom('img/ng5.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center gap-3">
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ng04.jpg" alt="Image 5" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle"
+                    onclick="openZoom('img/ng04.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <div class="position-relative" style="width: 50vw; max-width: 230px;">
+            <img src="img/ng06.jpg" alt="Image 6" class="img-fluid rounded" style="height: 160px; width: 100%; border-radius: 5px;">
+            <button class="btn btn-sm btn-light position-absolute top-50 start-50 translate-middle" onclick="openZoom('img/ng06.jpg')"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#eventsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#eventsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-white rounded shadow">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="zoomedImage" src="" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showBtn(el) {
+    el.querySelector('button').classList.remove('d-none');
+  }
+
+  function hideBtn(el) {
+    el.querySelector('button').classList.add('d-none');
+  }
+
+  function openZoom(src) {
+    document.getElementById('zoomedImage').src = src;
+    const modal = new bootstrap.Modal(document.getElementById('zoomModal'));
+    modal.show();
+  }
+</script>
+
+
+
+
+<br><br><br><br>
+
+
+
+	
+
+<div class="modal fade" id="zoomModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content bg-white rounded shadow">
+      <div class="modal-header border-0">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="zoomedImage" src="" class="img-fluid rounded" />
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+<br>
+
+
+
+
+<footer class="text-white pt-5 px-5" style="background-color: rgb(9, 31, 133);">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6 mb-4 text-white">
+        <img src="img/logo.png" alt="logo" style="width: 120px; height: 70px" />
+        <p class="mt-3">
+          Founded in 1974, Swami Vivekananda Yuva Sangha began with a small hut and now serves across 7 districts, promoting education, health, environment, and empowerment inspired by Swami Vivekananda's ideals.
+        </p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-6 mb-4 text-white">
+        <h5 class="fw-bold mb-3">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="home.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="achievement.html" class="text-white text-decoration-none">Achievements</a></li>
+          <li><a href="Document.html" class="text-white text-decoration-none">Documents</a></li>
+          <li><a href="AwardsPage.html" class="text-white text-decoration-none">Awards</a></li>
+          <li><a href="GalleryPage.html" class="text-white text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-4 text-white">
+        <h5 class="fw-bold mb-3">Contacts</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> +91 9733278391</li>
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> ngo1111@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt me-2"></i> Vill & Post-Apple, Tamluk, Medinipur - 721222</li>
+        </ul>
+      </div>
+
+      
+      <div class="col-lg-4 col-md-6 mb-4 text-white">
+        <h5 class="fw-bold mb-3">Make a Donation</h5>
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Full Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Email Address" required>
+          </div>
+
+          <button type="submit" class="btn w-50" style="background-color: rgb(0, 68, 255); color: white;">Donate Now</button>
+        </form>
+      </div>
+    </div>
+
+    <hr class="text-muted">
+
+    <div class="text-center small pb-3">
+      Copyright ©2025 All rights reserved | Designed & Developed by a team
+    </div>
+  </div>
+</footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

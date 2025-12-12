@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>achievement</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      white-space: nowrap;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: white;
+    }
+
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: white;
+      left: 0;
+      bottom: 0;
+      transition: 0.3s ease-in-out;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
+
+      /* Remove underline */
+      .navbar .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: white;
+        transition: all 0.3s ease;
+      }
+
+
+      .navbar .nav-link:hover {
+        color: #fff;
+        text-shadow: 0 0 8px #ffffff, 0 0 10px #00ffff;
+      }
+
+
+      .navbar .arrow {
+        font-size: 0.7em;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+
+      .navbar .nav-link::after {
+        content: none !important;
+      }
+
+
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background-color: rgb(5, 25, 80);
+        padding: 1rem 0;
+      }
+
+      .dropdown-menu {        
+        transform: translateX(50%);
+      }
+
+
+      .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+        text-align: center;
+      }
+
+      .navbar-extra {
+        display: none !important;
+      }
+    }
+
+ 
+    @media (min-width: 992px) {
+      .carousel-inner img {
+        height: 690px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    /* Padding for fixed navbar */
+    .content-wrapper {
+      padding-top: 90px;
+    }
+
+    .navbar-toggler i {
+      font-size: 24px;
+    }
+    .hero {
+      background: rgb(11, 38, 156);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+
+    }
+    .achievement-card {
+      background: #dfe3f4;
+      border-left: 5px solid #33497b;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    .achievement-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .year-badge {
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+    .icon {
+      font-size: 28px;
+      margin-right: 10px;
+      color: #4b6cb7;
+    }
+  </style>
+</head>
+
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-dark py-3 shadow-sm fixed-top" style="background-color: rgb(9, 31, 133);">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-left" href="#">
+          <img src="img/logo.png" alt="Logo" width="50" height="50" class="me-2" />
+        </a>
+
+        <button
+          class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark d-none"></i>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="achievement.html">Achievements</a></li>
+            <li class="nav-item"><a class="nav-link" href="Document.html">Documents</a></li>
+            <li class="nav-item"><a class="nav-link" href="AwardsPage.html">Awards</a></li>
+            <li class="nav-item"><a class="nav-link" href="GalleryPage.html">Gallery</a></li>
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+  </div>
+
+
+<script>
+  const toggler = document.querySelector('.navbar-toggler');
+  const collapseEl = document.getElementById('navbarContent');
+  const barsIcon = toggler.querySelector('.fa-bars');
+  const xIcon = toggler.querySelector('.fa-xmark');
+
+  const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+
+  toggler.addEventListener('click', () => {
+    if (collapseEl.classList.contains('show')) {
+      bsCollapse.hide();
+    } else {
+      bsCollapse.show();
+    }
+  });
+
+  collapseEl.addEventListener('show.bs.collapse', () => {
+    barsIcon.classList.add('d-none');
+    xIcon.classList.remove('d-none');
+  });
+
+  collapseEl.addEventListener('hide.bs.collapse', () => {
+    barsIcon.classList.remove('d-none');
+    xIcon.classList.add('d-none');
+  });
+</script>
+
+
+  <section class="hero mt-5" style="background-color: rgb(14, 47, 193);">
+    <h1 class="display-4 fw-bold">Achievements of Swami Vivekananda Yuva Sangha</h1>
+    <p class="lead">Celebrating 45 Years of Excellence and Impact</p>
+  </section>
+
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-md-12">
+
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-people-roof" style="color: rgb(4, 123, 108);"></i>&nbsp; Reached 20,000+ families with improved chulhas through self-employed workers.</p>
+        </div>
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-recycle" style="color: rgb(4, 123, 108);"></i>&nbsp; Installed Bio Gas Plants for 2,500+ families and a 20m³ plant with public toilets for a destitute home.</p>
+        </div>
+
+
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-book" style="color: rgb(4, 123, 108);"></i>&nbsp; Ensured primary education for 500+ poor children and pre-primary schooling for 850+ through 5 Creche Centres.</p>
+        </div>
+
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-people-carry-box" style="color: rgb(4, 123, 108);"></i>&nbsp; Installed 18 improved fuel-efficient crematoriums across 10 Gram Panchayats.</p>
+        </div>
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-seedling" style="color: rgb(4, 123, 108);"></i>&nbsp; Built 3 medicinal plant gardens in different higher secondary schools.</p>
+        </div>
+
+        <div class="achievement-card" style="font-size: 18px;">
+          <p><i class="fa-solid fa-volume-high" style="color: rgb(4, 123, 108);"></i>&nbsp; Conducted 250+ awareness camps on women's issues, health, environment, savings, and social empowerment with 10,000+ participants.</p>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+<br><br>
+
+
+
+
+<footer class="text-white pt-5 px-5" style="background-color: rgb(9, 31, 133);">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 mb-4 text-white">
+        <img src="img/logo.png" alt="logo" style="width: 120px; height: 70px" />
+        <p class="mt-3">
+          Founded in 1974, Swami Vivekananda Yuva Sangha began with a small hut and now serves across 7 districts, promoting education, health, environment, and empowerment inspired by Swami Vivekananda's ideals.
+        </p>
+        <div class="d-flex gap-3 mt-3">
+          <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white"><i class="fa-brands fa-google-plus-g"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 mb-4 text-white">
+        <h5 class="fw-bold mb-3">Services</h5>
+        <ul class="list-unstyled">
+          <li><a href="home.html" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="achievement.html" class="text-white text-decoration-none">Achievements</a></li>
+          <li><a href="Document.html" class="text-white text-decoration-none">Documents</a></li>
+          <li><a href="AwardsPage.html" class="text-white text-decoration-none">Awards</a></li>
+          <li><a href="GalleryPage.html" class="text-white text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-md-3 mb-4 text-white">
+        <h5 class="fw-bold mb-3">Contacts</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> +91 9733278391</li>
+          <li class="mb-2"><i class="fas fa-envelope me-2"></i> ngo1111@gmail.com</li>
+          <li><i class="fas fa-map-marker-alt me-2"></i> Vill & Post-Apple, Tamluk, Medinipur - 721222</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-3 mb-4 text-white">
+        <h5 class="fw-bold mb-3 text-center text-white">Gallery</h5>
+        <div class="gallery">
+          <div class="row">
+            <div class="col-6 mb-3">
+              <img src="img/ng.jpg" alt="Gallery Image 1" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            </div>
+            <div class="col-6 mb-3">
+              <img src="img/ng1.jpg" alt="Gallery Image 2" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mb-3">
+              <img src="img/ngo1.jpg" alt="Gallery Image 3" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            </div>
+            <div class="col-6 mb-3">
+              <img src="img/ngo2.jpg" alt="Gallery Image 4" style="width: 100%; height: 100px; object-fit: cover; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.3s;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="text-muted">
+
+    <div class="text-center small pb-3">
+      Copyright ©2025 All rights reserved | Designed & Developed by a team
+    </div>
+  </div>
+</footer>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
