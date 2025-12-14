@@ -479,17 +479,35 @@
       
       <div class="col-lg-4 col-md-6 mb-4 text-white">
         <h5 class="fw-bold mb-3">Make a Donation</h5>
-        <form>
+        <form action="payment.php" method="POST">
           <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Full Name" required>
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Email Address" required>
+            <input type="text" class="form-control" name="name" placeholder="Full Name" required>
           </div>
 
-          <button type="submit" class="btn w-50" style="background-color: rgb(0, 68, 255); color: white;">Donate Now</button>
+          <div class="mb-3">
+            <input type="email" class="form-control" name="email" placeholder="Email Address" required>
+          </div>
+
+          <div class="mb-3">
+            <input type="number" class="form-control" name="amount" placeholder="Donation Amount" required>
+          </div>
+
+          <div class="mb-3">
+            <select class="form-control" name="method" required>
+              <option value="UPI">UPI</option>
+              <option value="Card">Card</option>
+              <option value="Net Banking">Net Banking</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn w-50" style="background-color: rgb(0, 68, 255); color: white;">
+            Donate Now
+          </button>
         </form>
+
       </div>
+
+
     </div>
 
     <hr class="text-muted">
