@@ -1,22 +1,34 @@
 <?php
-// DB connection
 $conn = new mysqli("localhost", "root", "", "ngo_donations");
 
 if ($conn->connect_error) {
-    die("Connection failed");
+    die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    if (
+        empty($_POST['name']) ||
+        empty($_POST['email']) ||
+        empty($_POST['amount']) ||
+        empty($_POST['method'])
+    ) {
+        die("All fields are required.");
+    }
+
     $name   = $_POST['name'];
     $email  = $_POST['email'];
-    $amount = $_POST['amount'];
+    $amount = (float) $_POST['amount'];
     $method = $_POST['method'];
 
     $stmt = $conn->prepare(
         "INSERT INTO donations (name, email, amount, method)
          VALUES (?, ?, ?, ?)"
     );
+
+    if (!$stmt) {
+        die("Prepare failed: " . $conn->error);
+    }
 
     $stmt->bind_param("ssds", $name, $email, $amount, $method);
 
